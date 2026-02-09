@@ -1,196 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Be My Valentine 💖 </title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<meta charset="UTF-8" />
+<title>Be My Valentine 💕</title>
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ffe6f0, #ffd6e8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont;
+  }
 
-    .card {
-      background: #fff5fa;
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(255, 182, 193, 0.4);
-      max-width: 400px;
-      z-index: 2;
-    }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe9f0, #ffd6e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
-    h1 {
-      color: #ff5c8a;
-      margin-bottom: 20px;
-    }
+  .card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 48px 42px;
+    border-radius: 26px;
+    text-align: center;
+    width: min(90vw, 420px);
+    box-shadow: 0 25px 60px rgba(255, 105, 150, 0.25);
+    z-index: 2;
+  }
 
-    .typewriter {
-      font-size: 18px;
-      color: #555;
-      min-height: 60px;
-    }
+  h1 {
+    margin: 0 0 18px;
+    color: #ff4f87;
+    font-size: 32px;
+    font-weight: 700;
+  }
 
-    .buttons {
-      margin-top: 30px;
-      position: relative;
-      height: 80px;
-    }
+  .typewriter {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    min-height: 64px;
+  }
 
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+  .buttons {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+  }
 
-    #yesBtn {
-      background: #ff5c8a;
-      color: white;
-      margin-right: 10px;
-    }
+  button {
+    padding: 14px 30px;
+    font-size: 16px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
-    #yesBtn:hover {
-      transform: scale(1.1);
-      background: #ff3b73;
-    }
+  #yesBtn {
+    background: linear-gradient(135deg, #ff5f93, #ff3f7f);
+    color: white;
+    box-shadow: 0 10px 25px rgba(255, 79, 135, 0.4);
+  }
 
-    #noBtn {
-      background: #ffd1e1;
-      color: #ff5c8a;
-      position: absolute;
-    }
+  #yesBtn:hover {
+    transform: scale(1.08);
+  }
 
-    /* Floating hearts */
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      transform: rotate(45deg);
-      animation: floatUp 8s linear infinite;
-      opacity: 0.6;
-    }
+  #noBtn {
+    background: #ffe1ec;
+    color: #ff4f87;
+    position: relative;
+  }
 
-    .heart::before,
-    .heart::after {
-      content: '';
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
-      position: absolute;
-    }
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #ff9bbd;
+    transform: rotate(45deg);
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+  }
 
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #ff9bbd;
+    border-radius: 50%;
+  }
 
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
+  .heart::before {
+    top: -9px;
+    left: 0;
+  }
 
-    @keyframes floatUp {
-      from {
-        transform: translateY(100vh) rotate(45deg);
-      }
-      to {
-        transform: translateY(-10vh) rotate(45deg);
-      }
+  .heart::after {
+    left: -9px;
+    top: 0;
+  }
+
+  @keyframes floatUp {
+    from {
+      transform: translateY(100vh) rotate(45deg);
     }
-  </style>
+    to {
+      transform: translateY(-15vh) rotate(45deg);
+    }
+  }
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>Hey Love 💕</h1>
-    <div class="typewriter" id="typewriter"></div>
+<div class="card">
+  <h1>Hey Love 💕</h1>
+  <div class="typewriter" id="typewriter"></div>
 
-    <div class="buttons">
-      <button id="yesBtn" onclick="yesClicked()">Yes 💖</button>
-      <button id="noBtn">No 🙃</button>
-    </div>
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClicked()">Yes 💖</button>
+    <button id="noBtn">No 🙃</button>
   </div>
+</div>
 
-  <script>
-    // Typewriter effect
-    const text = "I was wondering... will you be my Valentine? 🌹";
-    let index = 0;
-    const speed = 60;
-    const target = document.getElementById("typewriter");
+<script>
+  // Typewriter
+  const text = "I was wondering… will you be my Valentine? 🌹";
+  let i = 0;
+  const speed = 55;
+  const target = document.getElementById("typewriter");
 
-    function typeWriter() {
-      if (index < text.length) {
-        target.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-      }
+  function type() {
+    if (i < text.length) {
+      target.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
     }
-    typeWriter();
+  }
+  type();
 
-    // No button logic (never clickable)
-    const noBtn = document.getElementById("noBtn");
-    const messages = [
-      "Nice try 😏",
-      "Not happening 💅",
-      "You sure? 🥺",
-      "Wrong choice 😌",
-      "Try again 💖"
-    ];
+  // No button evasion
+  const noBtn = document.getElementById("noBtn");
+  const phrases = [
+    "Nice try 😏",
+    "Nope 💅",
+    "Wrong button 😌",
+    "You sure? 🥺",
+    "Try again 💕"
+  ];
 
-    noBtn.addEventListener("mouseenter", () => {
-      const x = Math.random() * 250;
-      const y = Math.random() * 50;
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-      noBtn.innerText = messages[Math.floor(Math.random() * messages.length)];
-    });
+  noBtn.addEventListener("mouseenter", () => {
+    noBtn.style.transform = `translate(${Math.random()*120 - 60}px, ${Math.random()*60 - 30}px)`;
+    noBtn.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+  });
 
-    function yesClicked() {
-      document.body.innerHTML = `
-        <div style="
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          height:100vh;
-          background:#ffe6f0;
-          text-align:center;
-          font-size:30px;
-          color:#ff5c8a;">
-          Yayyy 💕💘<br>You just made me the happiest person 🥰
-        </div>
-      `;
-    }
+  function yesClicked() {
+    document.body.innerHTML = `
+      <div style="
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        height:100vh;
+        background:linear-gradient(135deg,#ffe9f0,#ffd6e6);
+        text-align:center;
+        font-size:32px;
+        color:#ff4f87;
+        font-weight:600;
+      ">
+        Yayyy 💘🥰<br>You just made my heart so happy
+      </div>
+    `;
+  }
 
-    // Floating hearts generator
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-      document.body.appendChild(heart);
+  // Hearts
+  function spawnHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 6 + Math.random() * 4 + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+  }
 
-      setTimeout(() => {
-        heart.remove();
-      }, 8000);
-    }
-
-    setInterval(createHeart, 400);
-  </script>
+  setInterval(spawnHeart, 350);
+</script>
 
 </body>
 </html>
-
